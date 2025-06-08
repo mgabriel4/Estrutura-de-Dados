@@ -3,9 +3,9 @@ public class ZonaRural extends Zona {
         super(nome);
     }
 
-    @Override
-    public String toString() {
-        return "Zona Rural -> " + getNome();
+    public String relatorio() {
+        return "Zona: " + getNome() + "\n>>> Zona sem sensores instalados. Monitoramento indireto via satélite.\n";
     }
-    
 }
+
+

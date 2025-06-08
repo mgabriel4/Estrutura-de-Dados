@@ -7,6 +7,8 @@ public class ZonaUrbana extends Zona implements Emergencia {
         super(nome);
         this.sensores.add(sensor);
     }
+   
+
 
     public LinkedList<Sensor> getSensores() {
         return sensores;
@@ -19,7 +21,12 @@ public class ZonaUrbana extends Zona implements Emergencia {
 
     @Override
     public String classificarNivelEmergencia() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'classificarNivelEmergencia'");
+        double media = calcularMedia();
+        if (media <= 50) return "Sem risco";
+        else if (media <= 100) return "Monitoramento intensificado";
+        else if (media <= 150) return "Alerta para grupos sensíveis";
+        else if (media <= 200) return "Alerta Amarelo";
+        else if (media <= 300) return "Alerta Laranja";
+        else return "Alerta Vermelho (emergência total)";
     }
 }

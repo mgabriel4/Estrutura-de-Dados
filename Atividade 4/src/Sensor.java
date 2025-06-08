@@ -20,4 +20,9 @@ public class Sensor {
     public double getValor() {
         return valor;
     }
+
+    @Override
+    public String toString() {
+        return "Sensor [id=" + id + ", data=" + data + ", valor=" + valor + "]";
+    }
 }
