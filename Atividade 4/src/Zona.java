@@ -1,4 +1,4 @@
-public class Zona {
+public abstract class Zona implements Comparable<Zona> {
     private String nome;
 
     public Zona(String nome) {
@@ -16,5 +16,12 @@ public class Zona {
     @Override
     public String toString() {
         return "Zona -> " + nome;
+    }
+
+    public abstract String relatorio(); //método abstrato
+
+    @Override
+    public int compareTo(Zona outra) {
+        return this.nome.compareToIgnoreCase(outra.getNome());
     }
 }
